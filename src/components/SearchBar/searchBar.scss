@@ -4,12 +4,14 @@
   background: vars.$white;
   border: 1px solid vars.$grey-light;
   margin-block-end: vars.$space-base * 2;
+  border-radius: vars.$radius;
 
     &__search {
       border: 1px solid vars.$grey-light;
       margin: vars.$space-base * 2;
       height: vars.$size-base;
-      line-height: vars.$size-base;      
+      line-height: vars.$size-base;
+      border-radius: vars.$radius;   
 
       &__icon {
         height: vars.$size-base / 1.5;
