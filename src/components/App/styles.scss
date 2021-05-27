@@ -3,6 +3,7 @@
 .app {
   max-width: 1200px;
   margin-inline: auto;
+  padding: vars.$space-base * 2 ;
   background: vars.$grey-very-light;
   
   &__title {
