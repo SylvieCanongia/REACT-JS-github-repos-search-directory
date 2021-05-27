@@ -5,7 +5,7 @@ import './searchBar.scss';
 
 const SearchBar = () => (
   <div className="searchBar">
-    <div className="searchBar__search"><img src={searchIcon} className="searchBar__search__icon" alt="Search icon" /> Composant SearchBar</div>
+    <div className="searchBar__search"><img src={searchIcon} className="searchBar__search__icon" alt="Search icon" /> JavaScript</div>
   </div>
 );
 
