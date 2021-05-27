@@ -1,9 +1,8 @@
 @use 'src/styles/vars';
 
 .app {
-  max-width: 1200px;
+  max-width: 1000px;
   margin-inline: auto;
-  padding: vars.$space-base * 2 ;
   background: vars.$grey-very-light;
   
   &__title {

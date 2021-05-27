@@ -3,7 +3,7 @@
 .message {
   background: vars.$white;
   border: 1px solid vars.$grey-light;
-  margin-block-end: vars.$space-base * 2;
+  margin-inline: vars.$space-base * 2 ;
   padding: vars.$space-base * 1.8;
   border-radius: vars.$radius;
 }

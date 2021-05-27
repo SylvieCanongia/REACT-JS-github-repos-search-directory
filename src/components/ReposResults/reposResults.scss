@@ -1,0 +1,14 @@
+@use 'src/styles/vars';
+
+.reposResults {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+
+  .reposResult__repo {
+    border: 1px solid vars.$grey-light;
+    margin: vars.$space-base * 2 ;
+    height: vars.$size-base * 15;
+    border-radius: vars.$radius;
+  }
+}

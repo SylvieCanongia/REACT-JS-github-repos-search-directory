@@ -2,6 +2,7 @@
 import React from 'react';
 import SearchBar from 'src/components/SearchBar';
 import Message from 'src/components/Message';
+import ReposResults from 'src/components/ReposResults';
 
 // == Import
 import './styles.scss';
@@ -13,7 +14,7 @@ const App = () => (
     <h1 className="app__title"><img src={logo} alt="Github logo" /></h1>
     <SearchBar />
     <Message />
-    <div>ReposResults</div>
+    <ReposResults />
   </div>
 );
 

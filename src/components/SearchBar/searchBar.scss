@@ -3,6 +3,7 @@
 .searchBar {
   background: vars.$white;
   border: 1px solid vars.$grey-light;
+  margin-inline: vars.$space-base * 2 ;
   margin-block-end: vars.$space-base * 2;
   border-radius: vars.$radius;
 
