@@ -1,6 +1,21 @@
 @use 'reset';
 @use 'vars';
 
-body {
-  font-family: sans-serif;
+* {
+  box-sizing: border-box;
 }
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: vars.$grey-light;
+}
+
+html {
+  font-size: vars.$font-size-base;
+  font-family: 'Lato', sans-serif;
+}
+  

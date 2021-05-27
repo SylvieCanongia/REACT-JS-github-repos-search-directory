@@ -1,0 +1,26 @@
+// TYPOGRAPHY
+
+$font-size-base: 1.125em;
+$font-size-medium: 1.5rem;
+$font-size-large: 2rem;
+$font-size-very-large: 2.5rem;
+
+// SPACING
+
+$space-base: 8px;
+// $space-small: $space-base * 2;    // 16px
+// $space-medium: $space-base * 3;   // 24px
+// $space-large: $space-base * 4;   // 32px
+
+// COLOR PALETTE
+
+$white: hsl(100deg, 100%, 100%);
+$black: hsl(0deg, 0%, 0%);
+$grey-dark: hsl(0deg, 0%, 10%);
+$grey-light: hsl(204, 8%, 76%);
+$grey-very-light: hsl(192, 15%, 94%);
+
+// Border Radius
+$normal-radius: 5px;
+$large-radius: 15px;
+

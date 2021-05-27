@@ -1,1 +1,11 @@
+@use 'src/styles/vars';
 
+.app {
+  max-width: 1200px;
+  margin-inline: auto;
+  background: vars.$grey-very-light;
+  
+  &__title {
+    text-align: center;
+  }
+}
