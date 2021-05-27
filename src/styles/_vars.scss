@@ -1,6 +1,7 @@
 // TYPOGRAPHY
 
-$font-size-base: 1.125em;
+$font-size-base: 1em;
+
 $font-size-medium: 1.5rem;
 $font-size-large: 2rem;
 $font-size-very-large: 2.5rem;
@@ -17,7 +18,10 @@ $space-base: 8px;
 $white: hsl(100deg, 100%, 100%);
 $black: hsl(0deg, 0%, 0%);
 $grey-dark: hsl(0deg, 0%, 10%);
-$grey-light: hsl(204, 8%, 76%);
+$grey-lighter: hsl(0deg, 0%, 50%);
+$grey-very-lighter: hsl(0, 0%, 95%);
+$grey-light: hsl(200, 3%, 79%);
+$grey-light-transparent: hsla(200, 3%, 79%, 0.5);
 $grey-very-light: hsl(192, 15%, 94%);
 
 // Border Radius

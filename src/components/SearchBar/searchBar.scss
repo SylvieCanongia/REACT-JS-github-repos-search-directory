@@ -6,6 +6,7 @@
   margin-inline: vars.$space-base * 2 ;
   margin-block-end: vars.$space-base * 2;
   border-radius: vars.$radius;
+  box-shadow: 0 1px vars.$grey-light-transparent;
 
     &__search {
       border: 1px solid vars.$grey-light;
