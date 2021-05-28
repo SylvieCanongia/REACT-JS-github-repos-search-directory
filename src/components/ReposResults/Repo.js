@@ -17,12 +17,15 @@ const Repo = ({ name, description, owner }) => (
 
 Repo.propTypes = {
   name: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/require-default-props
   description: PropTypes.string,
   owner: PropTypes.shape({
     avatar_url: PropTypes.string.isRequired,
     login: PropTypes.string.isRequired,
   }).isRequired,
+};
+
+Repo.defaultProps = {
+  description: '',
 };
 
 export default Repo;
