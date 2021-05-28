@@ -1,28 +1,6 @@
 @use 'src/styles/vars';
 
 .searchBar {
-  background: vars.$white;
-  border: 1px solid vars.$grey-light;
   margin-inline: vars.$space-base * 2 ;
   margin-block-end: vars.$space-base * 2;
-  border-radius: vars.$radius;
-  box-shadow: 0 1px vars.$grey-light-transparent;
-
-  &__search {
-    position: relative;
-    padding: vars.$space-base * 2;
-  
-    .searchBar__input {
-      height: vars.$size-base;
-      width: 100%;
-      font-size: vars.$font-size-base;
-    } 
-
-    .searchBar__icon {
-      height: vars.$size-base / 1.5;
-      position: absolute;
-      top: vars.$space-base * 3;
-      left: vars.$space-base * 3;
-    }
-  }
 }
