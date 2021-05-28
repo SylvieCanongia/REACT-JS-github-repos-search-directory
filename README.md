@@ -2,12 +2,17 @@
 
 A directory that allows you to search for repos on github, made with React JS :heart_eyes:
 
-## First step
+## Steps
 
-Static integration with 3 components and dynamic display of the 30 repos list from a local data file :tada:
+- Static integration with 3 components and dynamic display of the 30 repos list from a local data file :tada:
+- In progress... :sunglasses:
 
-![Alt](screenshot.jpg "Static integration")
+## Screenshots
 
-## Second step
+### Desktop
 
-In progress... :sunglasses:
+![Alt](screenshot.jpg "Screenshot desktop")
+
+### Mobile
+
+![Alt](screenshot2.jpg "Screenshot mobile")
