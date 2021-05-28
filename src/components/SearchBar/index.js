@@ -3,9 +3,17 @@ import React from 'react';
 import searchIcon from 'src/assets/images/search-icon.png';
 import './searchBar.scss';
 
+{/* <img src={searchIcon} className="searchBar__search__icon"  */}
+// JavaScript</div>
+
 const SearchBar = () => (
   <div className="searchBar">
-    <div className="searchBar__search"><img src={searchIcon} className="searchBar__search__icon" alt="Search icon" /> JavaScript</div>
+    <div className="searchBar__search">
+      <input type="search" className="searchBar__input" />
+      <div type="button">
+        <img src={searchIcon} className="searchBar__icon" alt="Search icon" />
+      </div>
+    </div>
   </div>
 );
 

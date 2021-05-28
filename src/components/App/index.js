@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useState } from 'react';
 import SearchBar from 'src/components/SearchBar';
 import Message from 'src/components/Message';
 import ReposResults from 'src/components/ReposResults';
@@ -14,14 +14,19 @@ const reposItems = repos.items;
 // console.log(reposItems);
 
 // == Component
-const App = () => (
-  <div className="app">
-    <h1 className="app__title"><img src={logo} alt="Github logo" /></h1>
-    <SearchBar />
-    <Message />
-    <ReposResults reposItems={reposItems} />
-  </div>
-);
+const App = () => {
+  const [repos, setRepos] = useState([]);
+
+  return (
+
+    <div className="app">
+      <h1 className="app__title"><img src={logo} alt="Github logo" /></h1>
+      <SearchBar />
+      <Message />
+      <ReposResults reposItems={reposItems} />
+    </div>
+  );
+};
 
 // == Export
 export default App;

@@ -8,17 +8,24 @@
   border-radius: vars.$radius;
   box-shadow: 0 1px vars.$grey-light-transparent;
 
-    &__search {
+  &__search {
+    position: relative;
+    padding: vars.$space-base * 2;
+  
+    .searchBar__input {
       border: 1px solid vars.$grey-light;
-      margin: vars.$space-base * 2;
+      padding-inline: vars.$space-base * 5;
       height: vars.$size-base;
       line-height: vars.$size-base;
-      border-radius: vars.$radius;   
+      border-radius: vars.$radius;
+      width: 100%;
+    } 
 
-      &__icon {
-        height: vars.$size-base / 1.5;
-        margin-inline: vars.$space-base;
-        vertical-align: text-bottom;
-      }
+    .searchBar__icon {
+      height: vars.$size-base / 1.5;
+      position: absolute;
+      top: vars.$space-base * 3;
+      left: vars.$space-base * 3;
     }
+  }
 }
