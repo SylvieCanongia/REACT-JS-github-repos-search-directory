@@ -4,43 +4,12 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(180px, 1fr));
   grid-template-rows: auto;
+  gap: vars.$space-base * 2;
 
-  .reposResult {
-    background: vars.$white;
-    border: 1px solid vars.$grey-light;
-    margin: vars.$space-base * 2 ;
-    border-radius: vars.$radius;
-    overflow: hidden;
-    max-height: vars.$size-base * 15;
-    box-shadow: 0 1px vars.$grey-light-transparent;
-
-    &__img {
-      background: vars.$grey-very-lighter;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    &__title, &__subtitle, &__description {
-      margin-inline: vars.$space-base * 2;
-      margin-block: vars.$space-base * 1.5;
-      word-wrap: break-word;
-    }
-
-    &__title {
-      font-weight: 900;
-      font-size: vars.$font-size-medium;
-    }
-
-    &__subtitle {
-      font-weight: 400;
-      color: vars.$grey_light;
-    }
-
-    &__description {
-      color: vars.$grey-lighter;
-    }
+  .reposResult__card.card {
+  width: 100%;
+  height: 100%;
+  word-wrap: break-word;
   }
 }
 
