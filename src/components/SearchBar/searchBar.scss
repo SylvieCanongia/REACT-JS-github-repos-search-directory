@@ -13,11 +13,7 @@
     padding: vars.$space-base * 2;
   
     .searchBar__input {
-      border: 1px solid vars.$grey-light;
-      padding: 0 vars.$space-base 0 vars.$space-base * 5;
       height: vars.$size-base;
-      line-height: vars.$size-base;
-      border-radius: vars.$radius;
       width: 100%;
       font-size: vars.$font-size-base;
     } 
