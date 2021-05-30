@@ -16,17 +16,20 @@ import logo from 'src/assets/images/logo-github.png';
 
 // == Component
 const App = () => {
-const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('');
 
   const makeSearch = () => {
-
-    console.log('app: makeSearch');
+  console.log('app: makeSearch', search);
   };
+
+  // const setSearchValue = (newValue) => {
+  //   setSearch(newValue);
+  // };
 
   return (
     <div className="app">
       <h1 className="app__title"><img src={logo} alt="Github logo" /></h1>
-      <SearchBar manageSubmit={makeSearch} search={search} />
+      <SearchBar manageSubmit={makeSearch} search={search} setSearch={setSearch} />
       <Message />
       <ReposResults reposItems={reposData.items} />
     </div>
