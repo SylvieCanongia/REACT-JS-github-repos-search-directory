@@ -1,25 +1,36 @@
 // == Import npm
 import React, { useState } from 'react';
-import SearchBar from 'src/components/SearchBar';
-import Message from 'src/components/Message';
-import ReposResults from 'src/components/ReposResults';
-
+import axios from 'axios';
 import 'semantic-ui-css/semantic.min.css';
 
-import reposData from 'src/assets/data/repos';
+// import reposData from 'src/assets/data/repos';
 
 // == Import
 import './styles.scss';
 import logo from 'src/assets/images/logo-github.png';
 
+import SearchBar from 'src/components/SearchBar';
+import Message from 'src/components/Message';
+import ReposResults from 'src/components/ReposResults';
+
 // console.log(reposData);
 
 // == Component
 const App = () => {
+  // state for the input value for the search
   const [search, setSearch] = useState('');
 
+  // state for the list of repos
+  const [repos, setRepos] = useState([]);
+
   const makeSearch = () => {
-  console.log('app: makeSearch', search);
+    axios.get(`https://api.github.com/search/repositories?q=${search}`)
+      .then((response) => {
+        setRepos(response.data.items);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   // const setSearchValue = (newValue) => {
@@ -31,7 +42,7 @@ const App = () => {
       <h1 className="app__title"><img src={logo} alt="Github logo" /></h1>
       <SearchBar manageSubmit={makeSearch} search={search} setSearch={setSearch} />
       <Message />
-      <ReposResults reposItems={reposData.items} />
+      <ReposResults reposItems={repos} />
     </div>
   );
 };

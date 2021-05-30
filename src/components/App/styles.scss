@@ -5,6 +5,7 @@
   margin-inline: auto;
   padding-inline: vars.$space-base * 2 ;
   background: vars.$grey-very-light;
+  min-height: 100vh;
   
   &__title {
     text-align: center;
