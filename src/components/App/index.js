@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useState } from 'react';
 import SearchBar from 'src/components/SearchBar';
 import Message from 'src/components/Message';
 import ReposResults from 'src/components/ReposResults';
@@ -16,19 +16,22 @@ import logo from 'src/assets/images/logo-github.png';
 
 // == Component
 const App = () => {
+const [search, setSearch] = useState('');
+
   const makeSearch = () => {
+
     console.log('app: makeSearch');
   };
 
   return (
     <div className="app">
       <h1 className="app__title"><img src={logo} alt="Github logo" /></h1>
-      <SearchBar manageSubmit={makeSearch} />
+      <SearchBar manageSubmit={makeSearch} search={search} />
       <Message />
       <ReposResults reposItems={reposData.items} />
     </div>
   );
-  };
+};
 
 // == Export
 export default App;
