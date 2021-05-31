@@ -27,8 +27,8 @@ const App = () => {
   // state for the message field
   const [message, setMessage] = useState('Bienvenue ! Vous pouvez saisir votre recherche dans le champ ci-dessus');
 
-  // // State for the error message
-  // const [errorMessage, setErrorMessage] = useState('');
+  // State for the error message
+  const [errorMessage, setErrorMessage] = useState('');
 
   // loader indicating if we are waiting for a response
   const [loading, setLoading] = useState(false);
@@ -39,10 +39,13 @@ const App = () => {
     axios.get(`https://api.github.com/search/repositories?q=${search}`)
       .then((response) => {
         setRepos(response.data.items);
-        setMessage(`Voici les 30 premiers résultats sur ${response.data.total_count} résultat(s).`);
+        setMessage(`${response.data.total_count} résultat(s) trouvés. Seuls les 30 premiers sont affichés.`);
+        setErrorMessage('');
       })
       .catch((error) => {
-        setMessage(`Une erreur s'est produite, veuillez relancer votre recherche : ${error}`);
+        setRepos([]);
+        setMessage('');
+        setErrorMessage(`Une erreur s'est produite, veuillez relancer votre recherche : ${error}`);
       })
       .finally(() => {
         setLoading(false);
@@ -57,7 +60,7 @@ const App = () => {
     <div className="app">
       <h1 className="app__title"><img src={logo} alt="Github logo" /></h1>
       <SearchBar manageSubmit={makeSearch} search={search} setSearch={setSearch} />
-      <Message message={message} />
+      <Message message={message} errorMessage={errorMessage} />
       <ReposResults reposItems={repos} />
       {loading && (
         <Dimmer active>
