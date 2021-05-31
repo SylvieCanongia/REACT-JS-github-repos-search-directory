@@ -13,7 +13,7 @@ const ReposResults = ({ reposItems }) => (
           <Repo {...reposItem} />
         </a>
       </div>
-    ))};
+    ))}
   </div>
 );
 

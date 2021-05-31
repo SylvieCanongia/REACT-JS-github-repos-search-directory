@@ -1,13 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Message as MessageUi } from 'semantic-ui-react';
 
 import './message.scss';
 
-const Message = () => (
+const Message = ({ message }) => (
   <MessageUi id="message">
-    Voici les 30 premiers résultats sur 2134843 résultats.
+    {message}
   </MessageUi>
-  // <div ></div>
 );
+
+Message.propTypes = {
+  message: PropTypes.string.isRequired,
+};
 
 export default Message;

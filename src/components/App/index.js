@@ -23,10 +23,14 @@ const App = () => {
   // state for the list of repos
   const [repos, setRepos] = useState([]);
 
+  // state for the message field
+  const [message, setMessage] = useState('Bienvenue ! Vous pouvez saisir votre recherche dans le champ ci-dessus');
+
   const makeSearch = () => {
     axios.get(`https://api.github.com/search/repositories?q=${search}`)
       .then((response) => {
         setRepos(response.data.items);
+        setMessage(`Voici les 30 premiers résultats sur ${response.data.total_count} résultat(s).`);
       })
       .catch((error) => {
         console.log(error);
@@ -41,7 +45,7 @@ const App = () => {
     <div className="app">
       <h1 className="app__title"><img src={logo} alt="Github logo" /></h1>
       <SearchBar manageSubmit={makeSearch} search={search} setSearch={setSearch} />
-      <Message />
+      <Message message={message} />
       <ReposResults reposItems={repos} />
     </div>
   );
