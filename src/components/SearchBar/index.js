@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Input, Form, Segment } from 'semantic-ui-react';
 import './searchBar.scss';
@@ -8,6 +8,15 @@ const SearchBar = ({ manageSubmit, search, setSearch }) => {
     event.preventDefault();
     manageSubmit();
   };
+
+  // reference to the input element of the dom
+  const refInput = useRef(null);
+
+  // set focus after first display of the page
+  useEffect(() => {
+    // console.log(refInput.current);
+    refInput.current.focus();
+  });
 
   return (
     <div className="searchBar">
@@ -23,6 +32,7 @@ const SearchBar = ({ manageSubmit, search, setSearch }) => {
               onChange={(event) => {
                 setSearch(event.currentTarget.value);
               }}
+              ref={refInput}
             />
           </Form.Field>
         </Form>
