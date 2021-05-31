@@ -1,6 +1,7 @@
 // == Import npm
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Dimmer, Loader } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
 // import reposData from 'src/assets/data/repos';
@@ -26,7 +27,12 @@ const App = () => {
   // state for the message field
   const [message, setMessage] = useState('Bienvenue ! Vous pouvez saisir votre recherche dans le champ ci-dessus');
 
+  // loader indicating if we are waiting for a response
+  const [loading, setLoading] = useState (false);
+
   const makeSearch = () => {
+    setLoading(true);
+
     axios.get(`https://api.github.com/search/repositories?q=${search}`)
       .then((response) => {
         setRepos(response.data.items);
@@ -34,6 +40,9 @@ const App = () => {
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -47,6 +56,11 @@ const App = () => {
       <SearchBar manageSubmit={makeSearch} search={search} setSearch={setSearch} />
       <Message message={message} />
       <ReposResults reposItems={repos} />
+      {loading && (
+        <Dimmer active>
+          <Loader />
+        </Dimmer>
+      )}
     </div>
   );
 };
