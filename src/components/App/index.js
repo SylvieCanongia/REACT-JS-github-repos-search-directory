@@ -28,11 +28,7 @@ const App = () => {
   const [message, setMessage] = useState('Bienvenue ! Vous pouvez saisir votre recherche dans le champ ci-dessus');
 
   // loader indicating if we are waiting for a response
-  const [loading, setLoading] = useState (false);
-
-  useEffect(() => {
-    
-  }, []);
+  const [loading, setLoading] = useState(false);
 
   const makeSearch = () => {
     setLoading(true);
