@@ -33,6 +33,9 @@ const App = () => {
   // loader indicating if we are waiting for a response
   const [loading, setLoading] = useState(false);
 
+  // show if message is displayed or not
+  const [displayMessage, setDisplayMessage] = useState(true);
+
   const makeSearch = () => {
     setLoading(true);
 
@@ -41,15 +44,21 @@ const App = () => {
         setRepos(response.data.items);
         setMessage(`${response.data.total_count} résultat(s) trouvés. Seuls les 30 premiers sont affichés.`);
         setErrorMessage('');
+        setDisplayMessage(true);
       })
       .catch((error) => {
         setRepos([]);
         setMessage('');
         setErrorMessage(`Une erreur s'est produite, veuillez relancer votre recherche : ${error}`);
+        setDisplayMessage(true);
       })
       .finally(() => {
         setLoading(false);
       });
+  };
+
+  const hideMessage = () => {
+    setDisplayMessage(false);
   };
 
   // const setSearchValue = (newValue) => {
@@ -60,7 +69,13 @@ const App = () => {
     <div className="app">
       <h1 className="app__title"><img src={logo} alt="Github logo" /></h1>
       <SearchBar manageSubmit={makeSearch} search={search} setSearch={setSearch} />
-      <Message message={message} errorMessage={errorMessage} />
+      {displayMessage && (
+        <Message
+          message={message}
+          errorMessage={errorMessage}
+          hideMessage={hideMessage}
+        />
+      )}
       <ReposResults reposItems={repos} />
       {loading && (
         <Dimmer active>
