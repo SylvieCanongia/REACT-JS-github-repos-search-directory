@@ -1,5 +1,5 @@
 // == Import npm
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
@@ -27,6 +27,9 @@ const App = () => {
   // state for the message field
   const [message, setMessage] = useState('Bienvenue ! Vous pouvez saisir votre recherche dans le champ ci-dessus');
 
+  // // State for the error message
+  // const [errorMessage, setErrorMessage] = useState('');
+
   // loader indicating if we are waiting for a response
   const [loading, setLoading] = useState(false);
 
@@ -39,7 +42,7 @@ const App = () => {
         setMessage(`Voici les 30 premiers résultats sur ${response.data.total_count} résultat(s).`);
       })
       .catch((error) => {
-        console.log(error);
+        setMessage(`Une erreur s'est produite, veuillez relancer votre recherche : ${error}`);
       })
       .finally(() => {
         setLoading(false);

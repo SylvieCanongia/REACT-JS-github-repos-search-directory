@@ -5,6 +5,7 @@ import { Message as MessageUi } from 'semantic-ui-react';
 import './message.scss';
 
 const Message = ({ message }) => (
+
   <MessageUi id="message">
     {message}
   </MessageUi>
