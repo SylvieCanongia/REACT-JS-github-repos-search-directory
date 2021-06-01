@@ -6,11 +6,15 @@ import './message.scss';
 
 const Message = ({ message, errorMessage, hideMessage }) => {
   useEffect(() => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       hideMessage();
     }, 10000);
-  }, []);
-
+    // cleaning function for the previous effect
+    return () => {
+      clearTimeout(timeoutId);
+      // console.log('Nettoyage');
+    };
+  }, [message, errorMessage]);
   return (
     <div>
       { errorMessage
@@ -18,13 +22,13 @@ const Message = ({ message, errorMessage, hideMessage }) => {
           <MessageUi error id="message">
             {errorMessage}
           </MessageUi>
-        )};
+        )}
       { message
         && (
           <MessageUi id="message">
             {message}
           </MessageUi>
-        )};
+        )}
     </div>
   );
 };
